@@ -4,7 +4,6 @@ import { Sidebar } from './support/sidebar/Sidebar.tsx';
 import { TasksView } from './components/TasksView/TasksView.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { UsersView } from './components/UsersView/UsersView.tsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -60,7 +60,7 @@ const TaskModal: React.FC<IProps> = ({
   const [updateTask] = useApiMutation(BackendEndpoint.UpdateTask);
   const [createTask] = useApiMutation(BackendEndpoint.CreateTask);
   const [deleteTask] = useApiMutation(BackendEndpoint.DeleteTask);
-  const [loadingDelete, setLoadingDelete] = React.useState(false);
+  const [loadingDelete, setLoadingDelete] = useState(false);
 
   const handleDelete = async () => {
     setLoadingDelete(true);
