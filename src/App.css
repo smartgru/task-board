@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+}
+
+*:not(.fa, .fab, .fas) {
+  font-family: sans-serif;
+}
