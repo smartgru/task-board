@@ -225,6 +225,7 @@ const TaskModal: React.FC<IProps> = ({
                   variant="outlined"
                   color="error"
                   disabled={isCTADisabled}
+                  loading={loadingDelete}
                   onClick={handleDelete}
                 >
                   Delete
@@ -234,6 +235,7 @@ const TaskModal: React.FC<IProps> = ({
                 size="large"
                 type="submit"
                 variant="contained"
+                loading={isSubmitting}
                 disabled={isCTADisabled}
               >
                 Save

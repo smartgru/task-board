@@ -210,6 +210,8 @@ const UserTable: React.FC<IProps> = ({ users, onChangeQuery, onRefresh }) => {
         <UserModal
           editMode
           user={selectedUser}
+          onDelete={handleDelete}
+          loadingDelete={loadingDelete}
           onClose={() => setOpenEditModal(false)}
           onRefresh={onRefresh}
         />

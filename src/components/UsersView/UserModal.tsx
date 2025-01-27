@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
   Button,
@@ -21,7 +21,9 @@ import { useApiMutation } from '../../support/api/hooks';
 interface IProps {
   user?: User;
   editMode?: boolean;
+  loadingDelete?: boolean;
   onClose: () => void;
+  onDelete?: () => Promise<void>;
   onRefresh?: () => Promise<User[]>;
 }
 
@@ -47,20 +49,16 @@ const validationSchema = yup.object().shape({
 const UserModal: React.FC<IProps> = ({
   user: selectedUser,
   editMode,
+  loadingDelete,
   onClose,
+  onDelete,
   onRefresh,
 }) => {
   const [createUser] = useApiMutation(BackendEndpoint.CreateUser);
   const [updateUser] = useApiMutation(BackendEndpoint.UpdateUser);
-  const [deleteUser] = useApiMutation(BackendEndpoint.DeleteUser);
-  const [loadingDelete, setLoadingDelete] = useState(false);
 
   const handleDelete = async () => {
-    setLoadingDelete(true);
-    if (!selectedUser) return;
-    await deleteUser({ id: selectedUser.id });
-    await onRefresh?.();
-    setLoadingDelete(false);
+    await onDelete?.();
     onClose();
   };
 
@@ -169,6 +167,7 @@ const UserModal: React.FC<IProps> = ({
                 size="large"
                 type="submit"
                 variant="contained"
+                loading={isSubmitting}
                 disabled={isCTADisabled}
               >
                 Save
