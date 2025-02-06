@@ -1,4 +1,4 @@
-# task-app
+# Task Board
 
 ## Description
 Task-app is a simple task management application designed to help users organize and manage their tasks efficiently.
@@ -26,6 +26,8 @@ Task-app is a simple task management application designed to help users organize
   ```bash
   yarn install
   ```
+### Screenshot
+![Screenshot](public/Screenshot.png)
 
 ## Usage
 1. Start the development server:
