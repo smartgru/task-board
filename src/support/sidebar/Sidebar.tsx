@@ -14,7 +14,7 @@ export const Sidebar: React.FC = () => (
       gap: '1em',
     }}
   >
-    <h1>Transcend Task Management</h1>
+    <h1>Task Management</h1>
     <StyledNavbarLink href="/" current={window.location.pathname === '/'}>
       <i className="fa fa-list-check" />
       <span>Tasks</span>
